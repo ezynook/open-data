@@ -1,0 +1,44 @@
+version: "3"
+services:
+  nginx:
+    container_name: nginx
+    image: ezynook/data-catalog:nginx
+    links:
+      - ckan
+    ports:
+      - "0.0.0.0:${PORT}:80"
+
+  ckan:
+    container_name: ckan
+    image: ezynook/data-catalog:ckan
+    environment:
+      - CKAN_SITE_URL=${IPADDR}:${PORT}
+    links:
+      - db
+      - solr
+      - redis
+    volumes:
+      - ckan_storage:/var/lib/ckan
+
+  db:
+    container_name: db
+    image: ezynook/data-catalog:db
+    ports:
+      - 5432:5432
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  solr:
+    container_name: solr
+    image: ezynook/data-catalog:solr
+    volumes:
+      - solr_data:/opt/solr/server/solr/ckan/data/index
+
+  redis:
+    container_name: redis
+    image: ezynook/data-catalog:redis
+
+volumes:
+  ckan_storage:
+  pg_data:
+  solr_data:
