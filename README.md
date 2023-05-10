@@ -1,3 +1,7 @@
+<div aign="center">
+    <img src="https://opendata.nesdc.go.th/uploads/admin/2021-07-11-050658.724063LogoOpen-D-05resize.png" width="150">
+</div>
+
 # วิธีการติดตั้ง CKAN Open-Data
 
 ---
