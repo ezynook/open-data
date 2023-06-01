@@ -99,9 +99,7 @@ python dataset.py
 * ⏱ Linux Crontab
 
 ## ✅ วิธีสร้าง Dataset
-* สร้างชุดข้อมูลโดยให้เลือกรูปแบบการเก็บข้อมูลเป็น ```CSV``` และกรอกรายละเอียด ```metadata``` ตามปกติให้เรียบร้อย
-* เพิ่มทรัพยากรใหม่ โดยให้เลือกนามสกุลของไฟล์เป็น ```CSV``` และทำการ Upload dummy.csv เข้าไปเพื่อเป็นไฟล์จำลอง ให้ระบบสร้าง Resource Table view ให้
-* สามารถ Execute Script ให้เป็นข้อมูลปัจจุบันจาก API ได้ทันที
+[Documentation](https://github.com/ezynook/open-data/blob/main/api/documentation.pdf)
 
 
 ---
