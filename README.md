@@ -36,3 +36,5 @@ http://<ip address>:<port>
 Username: admin
 Password: password
 ```
+### API Data Explorer
+[ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/api)
