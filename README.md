@@ -2,16 +2,16 @@
     <img src="https://opendata.nesdc.go.th/uploads/admin/2021-07-11-050658.724063LogoOpen-D-05resize.png" width="150">
 </div>
 
-# วิธีการติดตั้ง CKAN Open-Data
+# 📦 วิธีการติดตั้ง CKAN Open-Data
 
 ---
-### Download CKAN Open-Data
+### 🟢 Download CKAN Open-Data
 ```bash
 $ cd /home/
 $ git clone https://github.com/ezynook/open-data.git
 $ cd open-data/
 ```
-### Environment
+### 🟢 Environment
 PostgreSQL Database
 
 ```db: ckan | username: ckan password: ckan```
@@ -25,18 +25,18 @@ PORT=8080
 IPADDR=192.168.10.47
 ```
 
-### Start Container
+### 🟢 Start Container
 ```bash
 $ docker-compose up -d
 ```
-### Start Browser
+### 🟢 Start Browser
 ```bash
 http://<ip address>:<port>
 #Default admin username/password
 Username: admin
 Password: password
 ```
-### API Data Explorer
+### 🟢 API Data Explorer
 [ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/api)
 
 ---
