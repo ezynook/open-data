@@ -17,8 +17,6 @@ PASSWORD = main_config["PASSWORD"]
 IPADDR = main_config["IPADDR"]
 DB = main_config["DB"]
 TABLE_ID = main_config["TABLE_ID"]
-FILE_PATH = main_config["FILE_PATH"]
-FILE_NAME = main_config["FILE_NAME"]
 
 
 class SDC_Dataset:
@@ -36,9 +34,9 @@ class SDC_Dataset:
         data1 = data['MEA.usage_distictResponse']['MEA.usage_distictOutput']['MEA.row']
         #Append to DataFrame
         df = pd.DataFrame(data1)
-        os.system(f"rm -f {FILE_PATH}*")
-        df.to_csv(f"{FILE_PATH}{FILE_NAME}", index=False)
-        print(f"Replace file: {FILE_NAME} Successfully")
+        os.system(f"rm -f /var/lib/docker/volumes/ckan_storage/_data/resource/{TABLE_ID[:3]}/{TABLE_ID[3:6]}/*")
+        df.to_csv(f"/var/lib/docker/volumes/ckan_storage/_data/resource/{TABLE_ID[:3]}/{TABLE_ID[3:6]}/{TABLE_ID[6:]}", index=False)
+        print(f"Replace file: {TABLE_ID[6:]} Successfully")
         self.editDataExplorer(df)
         
     def editDataExplorer(self, df):
