@@ -17,8 +17,6 @@ PASSWORD = main_config["PASSWORD"]
 IPADDR = main_config["IPADDR"]
 DB = main_config["DB"]
 TABLE_ID = main_config["TABLE_ID"]
-FILE_PATH = main_config["FILE_PATH"]
-FILE_NAME = main_config["FILE_NAME"]
 
 class SDC_API:
     def __init__(self) -> None:
