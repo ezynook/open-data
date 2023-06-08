@@ -40,7 +40,7 @@ Password: password
 [ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/api)
 
 ### 🟢 API Data Dictionary
-[ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/data%20dict)
+[ดูวิธีการใช้งาน Data Dictionary](https://github.com/ezynook/open-data/tree/main/data%20dict)
 
 ---
 
