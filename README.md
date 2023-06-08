@@ -39,6 +39,9 @@ Password: password
 ### 🟢 API Data Explorer
 [ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/api)
 
+### 🟢 API Data Dictionary
+[ดูวิธีการใช้งาน API](https://github.com/ezynook/open-data/tree/main/data%20dict)
+
 ---
 
 > ⚒️ develop by pasit.dev
