@@ -16,8 +16,6 @@ USERNAME = main_config["USERNAME"]
 PASSWORD = main_config["PASSWORD"]
 IPADDR = main_config["IPADDR"]
 DB = main_config["DB"]
-TABLE_ID = main_config["TABLE_ID"]
-
 
 class SDC_Dataset:
     def __init__(self) -> None:
@@ -27,7 +25,16 @@ class SDC_Dataset:
         engine = create_engine(f"postgresql://{USERNAME}:%s@{IPADDR}/{DB}" % quote(f'{PASSWORD}'))
         return engine
     
+    #ต้องไป Generate API ที่ WebUI
+    def getID(dataset):
+        r = requests.get(f"http://192.168.10.47/api/3/action/package_show?id={dataset}", 
+                     headers={'Authorization': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2ODYyMDI0MTgsImp0aSI6IlVLaGFsSWU1eG1xUjZNR2o3bGQ4amVkTnEzeHB1X2QyZ05hS1VUVENVNkJRVTZaM3VsX295MkVicE1FRzBkSnNKNHluZTFFM0lVRUlaTlVPIn0.-2GI8s-h4MZrZ2MeOtkZvqyWyEw54d5m_p7vLboEekY'})
+        data = r.json()
+        result = data['result']['resources'][0]['id']
+        return result
+    
     def getData(self):
+        TABLE_ID = getID("test")
         url = "http://demo-cinspire.myddns.me:9400/json/MEA/usage_distict"
         response = requests.get(url, auth=("admin", "Dci@2560"), verify=False)
         data = response.json()
@@ -40,6 +47,7 @@ class SDC_Dataset:
         self.editDataExplorer(df)
         
     def editDataExplorer(self, df):
+        TABLE_ID = getID("test")
         df.insert(0, '_id', df.index)
         df.insert(1, '_full_text', np.nan)
         df.to_sql(f"{TABLE_ID}", self.Connect(), if_exists='replace', index=False)
