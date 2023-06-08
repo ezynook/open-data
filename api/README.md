@@ -82,7 +82,6 @@ USERNAME = "ckan"
 PASSWORD = "ckan"
 IPADDR = "192.168.10.98"
 DB="datastore"
-TABLE_ID = "7654c4b2-5ef7-4e93-affe-09acbb06402a"
 ```
 🟢 __ใช้งานแค่เฉพาะ API ให้ใช้ไฟล์__
 ```py
