@@ -1,20 +1,18 @@
-#----------------------------
-#Customize Image by pasit.dev
-#----------------------------
 version: "3"
 services:
-#------Nginx Web Server--------
   nginx:
     container_name: nginx
     image: ezynook/data-catalog:nginx
+    restart: always
     links:
       - ckan
     ports:
       - "0.0.0.0:${PORT}:80"
-#------Ckan Open-D--------
+      
   ckan:
     container_name: ckan
     image: ezynook/data-catalog:ckan
+    restart: always
     environment:
       - CKAN_SITE_URL=${IPADDR}:${PORT}
     links:
@@ -23,25 +21,27 @@ services:
       - redis
     volumes:
       - ckan_storage:/var/lib/ckan
-#------PostgreSQL 11-------
+
   db:
     container_name: db
     image: ezynook/data-catalog:db
+    restart: always
     ports:
       - 5432:5432
     volumes:
       - pg_data:/var/lib/postgresql/data
-#------Solr--------
+
   solr:
     container_name: solr
     image: ezynook/data-catalog:solr
+    restart: always
     volumes:
       - solr_data:/opt/solr/server/solr/ckan/data/index
-#------Redis--------
+
   redis:
     container_name: redis
     image: ezynook/data-catalog:redis
-
+    restart: always
 volumes:
   ckan_storage:
   pg_data:
